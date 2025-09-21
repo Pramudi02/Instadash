@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 
 export class barchartService {
-  private apiUrl = 'http://localhost:5241/table'; // Replace with your actual base URL
+  private apiUrl = `${environment.apiUrl}/table`; // Replace with your actual base URL
 
   constructor(private http: HttpClient) {}
 
