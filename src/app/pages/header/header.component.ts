@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/userProfile.service';
 import { ProfileImageService } from '../../services/profile-image.service';
 import { User } from '../../models/user.model';
+import { environment } from '../../../environments/environment';
 
 export interface UserDetails {
   id?: string;
@@ -72,7 +73,7 @@ export class HeaderComponent implements OnInit {
           if (userDetails.profileImage.startsWith('http')) {
             imageUrl = userDetails.profileImage;
           } else {
-            imageUrl = `http://localhost:5241${userDetails.profileImage}`;
+            imageUrl = `${environment.apiUrl}${userDetails.profileImage}`;
           }
           this.profileImageService.updateProfileImage(imageUrl);
         } else {

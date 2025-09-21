@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'; //use to inject one component to another component
 import { Observable, of } from 'rxjs'; //observable handle multiple data asynchronously  and create observable from static data
 import { HttpClient, HttpParams } from '@angular/common/http'; // HTTP requests to a backend API 
+import { environment } from '../../../environments/environment';
 
 interface TaxRecord {
   date: string;
@@ -19,7 +20,7 @@ interface TaxRecord {
 
 export class TaxSummaryService {
 
-  private apiUrl = 'http://localhost:5241/Table/totals'; // Change to match your backend API
+  private apiUrl = `${environment.apiUrl}/Table/totals`; // Change to match your backend API
 
   constructor(private http: HttpClient) {}
   

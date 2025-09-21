@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 interface TaxRecord {
   date: Date;
@@ -17,7 +18,7 @@ interface TaxRecord {
   providedIn: 'root'
 })
 export class TaxTableService {
-  private apiUrl = 'http://localhost:5241/Table/table';  // Your backend API URL
+  private apiUrl = `${environment.apiUrl}/Table/table`;  // Your backend API URL
 
   constructor(private http: HttpClient) {}
 

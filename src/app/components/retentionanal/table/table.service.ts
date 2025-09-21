@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 interface tableRecords {
   customer_id: string;
@@ -15,7 +16,7 @@ interface tableRecords {
   providedIn: 'root'
 })
 export class tableservice {
-  private apiUrl = 'http://localhost:5241/Customer/custable';
+  private apiUrl = `${environment.apiUrl}/Customer/custable`;
 
   constructor(private http: HttpClient) {}
 

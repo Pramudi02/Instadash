@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 export interface cusdetail{
     aCount : number,
@@ -13,7 +14,7 @@ export interface cusdetail{
 
 export class customerservice{
 
-    private apiUrl = 'http://localhost:5241/Customer';  
+    private apiUrl = `${environment.apiUrl}/Customer`;  
 
     constructor(private http: HttpClient) { }
         
