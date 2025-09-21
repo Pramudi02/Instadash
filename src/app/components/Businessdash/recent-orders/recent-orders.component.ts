@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../services/auth.service'; // ✅ Adjust this path as needed
+import { AuthService } from '../../../services/auth.service';
+import { environment } from '../../../../environments/environment';
 
 interface Order {
   orderId: string;
@@ -47,7 +48,7 @@ export class RecentOrdersComponent implements OnInit {
       return;
     }
 
-    const url = `http://localhost:5241/api/orders/company/${companyId}`;
+    const url = `${environment.apiUrl}/api/orders/company/${companyId}`;
 
     this.http.get<Order[]>(url).subscribe({
       next: (orders) => {
