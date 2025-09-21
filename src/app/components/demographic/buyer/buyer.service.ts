@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, map, throwError } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 export interface TopCustomer {
   name: string;
@@ -12,7 +13,7 @@ export interface TopCustomer {
   providedIn: 'root'
 })
 export class BuyerService {    
-  private apiUrl = 'http://localhost:5241/Customer'; // Matches the [Route("[controller]")] in the backend
+  private apiUrl = `${environment.apiUrl}/Customer`; // Matches the [Route("[controller]")] in the backend
 
   constructor(private http: HttpClient) { }
   
