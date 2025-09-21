@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 export interface Pur{
   productName: string;
@@ -15,7 +16,7 @@ export interface Pur{
 
 export class valuerateservice{
 
-     private apiUrl = 'http://localhost:5241/Customer/product-stats';  
+     private apiUrl = `${environment.apiUrl}/Customer/product-stats`;  
     
         constructor(private http: HttpClient) { }
             
