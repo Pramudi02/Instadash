@@ -15,3 +15,4 @@ import { ToastNotificationsComponent } from './shared/toast-notifications/toast-
 export class AppComponent {
   title = 'dashboard-app';
 }
+
