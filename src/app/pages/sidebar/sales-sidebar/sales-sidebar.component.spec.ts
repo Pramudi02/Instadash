@@ -21,3 +21,4 @@ describe('salesSidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -88,3 +88,4 @@ export class InventoryDashboardComponent implements OnInit {
     this.router.navigate(['/inventorymanager/stockupdate']);
   }
 }
+

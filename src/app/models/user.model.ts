@@ -37,3 +37,4 @@ export interface AuthResponse {
     user?: User;
     requiresOtpVerification?: boolean;
 }
+

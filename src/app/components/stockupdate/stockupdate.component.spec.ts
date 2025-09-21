@@ -21,3 +21,4 @@ describe('StockupdateComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

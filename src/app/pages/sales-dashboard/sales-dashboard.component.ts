@@ -106,3 +106,4 @@ export class SalesDashboardComponent implements OnInit {
     this.router.navigate(['/salesmanager/sales']);
   }
 }
+

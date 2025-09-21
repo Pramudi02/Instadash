@@ -21,3 +21,4 @@ describe('DemographicComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

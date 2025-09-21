@@ -21,3 +21,4 @@ describe('InventorySidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

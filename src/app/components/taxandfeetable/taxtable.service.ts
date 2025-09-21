@@ -36,3 +36,4 @@ export class TaxTableService {
     return this.http.get<TaxRecord[]>(this.apiUrl);
   }
 }
+

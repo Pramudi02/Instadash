@@ -23,3 +23,5 @@ export class PrintReportService {
     localStorage.removeItem('print-report-data'); // ✅ clean
   }
 }
+
+

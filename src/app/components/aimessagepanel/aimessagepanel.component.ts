@@ -150,3 +150,4 @@ export class AimessagepanelComponent implements OnInit, AfterViewChecked {
     return index;
   }
 }
+

@@ -21,3 +21,4 @@ describe('ValuerateComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

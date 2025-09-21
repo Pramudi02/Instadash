@@ -48,3 +48,4 @@ export class TopSellingTableComponent implements OnInit {
     return 'in-stock';
   }
 }
+

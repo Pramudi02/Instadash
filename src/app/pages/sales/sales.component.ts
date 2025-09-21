@@ -421,3 +421,4 @@ export class SalesComponent implements OnInit {
     this.router.navigate(['/salesmanager/salesOverveiw']);
   }
 }
+

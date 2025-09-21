@@ -92,3 +92,4 @@ export class StockupdateComponent implements OnInit {
     this.router.navigate(['../']);
   }
 }
+

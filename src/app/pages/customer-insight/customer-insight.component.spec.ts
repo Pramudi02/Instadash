@@ -21,3 +21,4 @@ describe('customerinsightComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

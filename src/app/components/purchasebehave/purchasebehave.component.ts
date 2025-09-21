@@ -12,3 +12,4 @@ import { ValuerateComponent } from './valuerate/valuerate.component';
 export class PurchasebehaveComponent {
 
 }
+

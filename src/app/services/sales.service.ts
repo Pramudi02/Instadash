@@ -304,3 +304,5 @@ export class SalesService {
     return this.http.get<any[]>(`${this.apiUrl}/SalesDashboard/aggregated-sales?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}&companyId=${encodeURIComponent(companyId)}`);
   }
 }
+
+

@@ -40,3 +40,4 @@ describe('CourierDashboardComponent', () => {
     expect(component.getStatusClass('Rejected')).toBe('rejected');
   });
 });
+

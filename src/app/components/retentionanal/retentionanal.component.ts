@@ -13,3 +13,4 @@ import { TableComponent } from './table/table.component';
 export class RetentionanalComponent {
 
 }
+

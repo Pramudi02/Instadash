@@ -13,3 +13,4 @@ export class barchartService {
     return this.http.get<{ [year: string]: number }>(`${this.apiUrl}/tax-sum/last-3-years`);
   }
 }
+

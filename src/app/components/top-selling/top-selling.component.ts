@@ -87,3 +87,4 @@ export class TopSellingComponent implements OnInit {
     return 'black'; // Default text color if something goes wrong
   }
 }
+

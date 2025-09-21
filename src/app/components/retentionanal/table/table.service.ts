@@ -32,3 +32,4 @@ export class tableservice {
     return this.http.get<tableRecords[]>(this.apiUrl);
   }
 }
+

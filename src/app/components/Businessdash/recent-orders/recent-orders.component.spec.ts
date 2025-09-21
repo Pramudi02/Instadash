@@ -21,3 +21,4 @@ describe('RecentOrdersComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

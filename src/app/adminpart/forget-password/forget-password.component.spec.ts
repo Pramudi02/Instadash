@@ -21,3 +21,4 @@ describe('ForgetPasswordComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

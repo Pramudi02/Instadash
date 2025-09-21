@@ -14,3 +14,4 @@ import { PurchasedetailsComponent } from './purchasedetails/purchasedetails.comp
 export class DemographicComponent {
 
 }
+

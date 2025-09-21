@@ -21,3 +21,4 @@ describe('PurchasedetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -21,3 +21,4 @@ describe('CustomersummaryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

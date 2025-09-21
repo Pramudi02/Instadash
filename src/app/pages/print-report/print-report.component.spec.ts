@@ -21,3 +21,4 @@ describe('PrintReportComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

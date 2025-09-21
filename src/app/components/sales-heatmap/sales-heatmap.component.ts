@@ -82,3 +82,4 @@ export class SalesHeatmapComponent implements OnInit {
     }
   }
 }
+

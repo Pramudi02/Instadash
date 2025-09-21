@@ -21,3 +21,4 @@ describe('StatusCardComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

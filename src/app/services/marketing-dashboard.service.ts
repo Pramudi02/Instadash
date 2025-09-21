@@ -82,3 +82,4 @@ export class MarketingDashboardService {
     return this.http.get<Campaign[]>('${environment.apiUrl}/api/campaign');
   }
 }
+

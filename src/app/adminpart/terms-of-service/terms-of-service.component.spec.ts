@@ -21,3 +21,4 @@ describe('TermsOfServiceComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

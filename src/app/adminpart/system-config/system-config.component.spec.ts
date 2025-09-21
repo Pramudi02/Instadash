@@ -21,3 +21,4 @@ describe('SystemConfigComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

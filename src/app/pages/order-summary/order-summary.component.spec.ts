@@ -21,3 +21,4 @@ describe('OrderSummaryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

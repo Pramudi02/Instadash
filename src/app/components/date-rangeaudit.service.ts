@@ -12,3 +12,4 @@ export class DateRangeService {
     this.dateRangeSource.next({ fromDate, toDate });
   }
 }
+

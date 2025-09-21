@@ -21,3 +21,4 @@ describe('InventoryMainpageComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

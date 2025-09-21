@@ -21,3 +21,4 @@ describe('SalesHeatmapComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -49,3 +49,4 @@ export class ToastNotificationsComponent implements OnInit, OnDestroy {
     }
   }
 }
+

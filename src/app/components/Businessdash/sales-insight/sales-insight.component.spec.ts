@@ -21,3 +21,4 @@ describe('SalesInsightComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

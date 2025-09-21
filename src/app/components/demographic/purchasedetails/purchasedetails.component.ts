@@ -51,3 +51,4 @@ loadChartData(): void {
     });
 }
 }
+

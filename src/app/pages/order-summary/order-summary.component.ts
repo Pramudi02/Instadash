@@ -237,3 +237,4 @@ export class OrderSummaryComponent implements OnInit, AfterViewInit {
     });
   }
 }
+

@@ -34,3 +34,4 @@ export class SalesAccessService {
     return this.http.patch<void>(`${this.apiUrl}/company/${companyId}`, salesAccessValue);
   }
 } 
+

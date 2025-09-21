@@ -307,3 +307,4 @@ export class PrintReportComponent implements OnInit, AfterViewInit {
     return '';
   }
 }
+

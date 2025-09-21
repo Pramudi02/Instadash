@@ -21,3 +21,4 @@ describe('PrivacyPolicyComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

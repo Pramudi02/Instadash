@@ -22,3 +22,5 @@ export class AuditService {
     return this.http.get<{ [key: number]: AuditYearStats }>(this.apiUrl);
   }
 }
+
+

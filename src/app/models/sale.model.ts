@@ -23,3 +23,4 @@ export interface SalesSummary {
   currentTotal: number;
   previousTotal: number;
 }
+

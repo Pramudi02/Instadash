@@ -60,3 +60,4 @@ export class AnalyticssidebarComponent {
     this.router.navigate(['/login']);
   }
 }
+

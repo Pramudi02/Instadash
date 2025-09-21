@@ -8,3 +8,4 @@ export interface product {
   description: string;
   companyId: string; // Added for company filtering
 }
+

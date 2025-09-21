@@ -296,3 +296,4 @@ export class SystemHealthComponent implements OnInit, OnDestroy {
     this.updateMetrics();
   }
 }
+

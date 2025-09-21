@@ -158,3 +158,4 @@ export class SalesInsightComponent implements OnInit {
     this.lastMonthLabel = '';
   }
 }
+
