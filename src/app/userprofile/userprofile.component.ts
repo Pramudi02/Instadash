@@ -7,6 +7,7 @@ import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 import { UserService } from '../services/userProfile.service';
 import { ProfileImageService } from '../services/profile-image.service';
+import { environment } from '../../environments/environment';
 
 export interface UserDetails {
   id?: string;
@@ -132,8 +133,8 @@ export class UserProfileComponent implements OnInit {
             this.imageSrc = userDetails.profileImage; // External URL
             this.profileImageService.updateProfileImage(userDetails.profileImage);
           } else {
-            this.imageSrc = `http://localhost:5241${userDetails.profileImage}`; // Local file
-            this.profileImageService.updateProfileImage(`http://localhost:5241${userDetails.profileImage}`);
+            this.imageSrc = `${environment.apiUrl}${userDetails.profileImage}`; // Local file
+            this.profileImageService.updateProfileImage(`${environment.apiUrl}${userDetails.profileImage}`);
           }
         }
       },
@@ -197,7 +198,7 @@ export class UserProfileComponent implements OnInit {
           // Update navbar with the new image URL
           if (response.imageUrl) {
             const fullImageUrl = response.imageUrl.startsWith('http') ? 
-              response.imageUrl : `http://localhost:5241${response.imageUrl}`;
+              response.imageUrl : `${environment.apiUrl}${response.imageUrl}`;
             this.profileImageService.updateProfileImage(fullImageUrl);
           }
           this.selectedFile = null;
@@ -385,7 +386,7 @@ export class UserProfileComponent implements OnInit {
     if (this.imageSrc.startsWith('http')) {
       return this.imageSrc; // External URL
     } else if (this.imageSrc.startsWith('/uploads')) {
-      return `http://localhost:5241${this.imageSrc}`; // Local file
+      return `${environment.apiUrl}${this.imageSrc}`; // Local file
     } else {
       return this.imageSrc; // Base64 or default
     }

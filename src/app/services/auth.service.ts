@@ -4,13 +4,14 @@ import { BehaviorSubject, Observable, tap, catchError, throwError } from 'rxjs';
 import { User, RegisterRequest, LoginRequest, AuthResponse, OtpVerifyRequest, OtpRequest } from '../models/user.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5241/api';
-  private authUrl = 'http://localhost:5241/api/auth';
+  private apiUrl = `${environment.apiUrl}/api`;
+  private authUrl = `${environment.apiUrl}/api/auth`;
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
   private jwtHelper = new JwtHelperService();

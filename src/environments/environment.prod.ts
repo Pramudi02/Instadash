@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://your-backend-url.azurewebsites.net' // Replace with your deployed backend URL
+  apiUrl: 'https://appue5te3lwwi77g.azurewebsites.net'
 };
