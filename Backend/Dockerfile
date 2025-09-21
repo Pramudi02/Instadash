@@ -16,7 +16,7 @@ WORKDIR /app
 COPY --from=build /app/publish ./
 
 # Default port used by the backend (can be overridden by env var ASPNETCORE_URLS)
-EXPOSE 80
+EXPOSE 10000
 
-ENV ASPNETCORE_URLS="http://+:80"
+ENV ASPNETCORE_URLS="http://+:10000"
 ENTRYPOINT ["dotnet", "Backend.dll"]

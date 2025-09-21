@@ -1,0 +1,55 @@
+services:
+  - type: web
+    name: instadash-backend
+    runtime: docker
+    rootDir: ./Backend
+    plan: free
+    region: oregon
+    branch: deploy
+    dockerCommand: dotnet Backend.dll
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://+:10000
+      - key: AllowedHosts
+        value: "*"
+      # MongoDB Configuration
+      - key: MongoDBSettings__ConnectionString
+        sync: false  # This will be set manually in dashboard
+      - key: MongoDBSettings__DatabaseName
+        value: ab-uom
+      - key: MongoDBSettings__AdminDatabaseName
+        value: admin-db
+      - key: MongoDBSettings__UserDetailsdatabase
+        value: UserDetails
+      - key: MongoDBSettings__UserDetailsCollectionName
+        value: userdetailscollection
+      - key: MongoDBSettings__PasswordResetCollectionName
+        value: passwordresets
+      - key: MongoDBSettings__UsersCollectionName
+        value: instadash
+      - key: MongoDBSettings__HoneycombCollectionName
+        value: honeycomb-db
+      # JWT Configuration
+      - key: JwtSettings__Key
+        sync: false  # This will be set manually in dashboard
+      - key: JwtSettings__Issuer
+        value: sdp-auth-server
+      - key: JwtSettings__Audience
+        value: sdp-app-users
+      - key: JwtSettings__ExpiresInMinutes
+        value: 60
+      # Email Configuration
+      - key: EmailSettings__SmtpServer
+        value: smtp.gmail.com
+      - key: EmailSettings__SmtpPort
+        value: 587
+      - key: EmailSettings__SenderEmail
+        sync: false  # This will be set manually in dashboard
+      - key: EmailSettings__SenderName
+        value: InstaDash App
+      - key: EmailSettings__Password
+        sync: false  # This will be set manually in dashboard
+      - key: EmailSettings__UseSsl
+        value: true
