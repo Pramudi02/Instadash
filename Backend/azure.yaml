@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: instadash-backend
+metadata:
+  template: instadash-backend@0.0.1-beta
+
+services:
+  backend:
+    project: .
+    language: csharp
+    host: appservice
+
+hooks:
+  postdeploy:
+    shell: pwsh
+    run: |
+      Write-Host "Deployment completed successfully!"
+      Write-Host "Backend API URL: $env:BACKEND_URL"
+      Write-Host "All secrets have been configured in Azure Key Vault."
+    continueOnError: false

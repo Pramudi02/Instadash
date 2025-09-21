@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, interval } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface SystemMetrics {
   cpuUsage: number;
@@ -48,7 +49,7 @@ export interface SystemActivity {
   providedIn: 'root'
 })
 export class AdminAnalyticsService {
-  private apiUrl = 'http://localhost:5241/api';
+  private apiUrl = '${environment.apiUrl}/api';
   
   // Real-time data subjects
   private systemMetricsSubject = new BehaviorSubject<SystemMetrics>({

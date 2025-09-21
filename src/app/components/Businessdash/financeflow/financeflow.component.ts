@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartConfiguration } from 'chart.js';
+import { environment } from '../../../../environments/environment';
 // Update the import path below to the correct relative path where auth.service.ts exists.
 // For example, if auth.service.ts is in src/app/services/, use the following:
 import { AuthService } from '../../../services/auth.service';
@@ -51,7 +52,7 @@ private fetchFinanceData(): void {
   }
 
   // ✅ Use correct route path
-  const url = `http://localhost:5241/api/finance/company/${companyId}`;
+  const url = `${environment.apiUrl}/api/finance/company/${companyId}`;
 
   this.http.get<FinanceEntry[]>(url).subscribe(data => {
     const sortedData = data

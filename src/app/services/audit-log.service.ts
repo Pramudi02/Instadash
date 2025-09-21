@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface AuditLog {
   id?: string;
@@ -45,7 +46,7 @@ export interface AuditLogFilter {
   providedIn: 'root'
 })
 export class AuditLogService {
-  private apiUrl = 'http://localhost:5241/api/auditlog';
+  private apiUrl = '${environment.apiUrl}/api/auditlog';
 
   constructor(private http: HttpClient) { }
 

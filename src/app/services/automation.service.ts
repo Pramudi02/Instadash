@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Automation {
     id: number;
@@ -24,7 +25,7 @@ export interface Automation {
 
 @Injectable({ providedIn: 'root' })
 export class AutomationService {
-  private baseUrl = 'http://localhost:5241/api/automation'; 
+  private baseUrl = '${environment.apiUrl}/api/automation'; 
 
   constructor(private http: HttpClient) {}
 

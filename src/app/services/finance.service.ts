@@ -8,7 +8,7 @@ import { AuthService } from './auth.service'; // ✅ Import AuthService
   providedIn: 'root'
 })
 export class FinanceService {
-  private apiUrl = 'http://localhost:5241/api/finance';
+  private apiUrl = '${environment.apiUrl}/api/finance';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

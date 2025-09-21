@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface SystemConfigSummary {
   securitySettings: SecuritySettings;
@@ -73,7 +74,7 @@ export interface UpdateSystemConfig {
   providedIn: 'root'
 })
 export class SystemConfigurationService {
-  private apiUrl = 'http://localhost:5241/api/systemconfiguration';
+  private apiUrl = '${environment.apiUrl}/api/systemconfiguration';
 
   constructor(private http: HttpClient) {}
 

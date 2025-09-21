@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Order } from '../models/ordersummery.model'; // Adjust path as needed
 import { AuthService } from '../services/auth.service'; // Adjust path as needed
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderService {
-  private readonly ORDERS_API = 'http://localhost:5241/api/orders';
-  private readonly STATUS_API = 'http://localhost:5241/api/orderstatus/summary';
+  private readonly ORDERS_API = `${environment.apiUrl}/api/orders`;
+  private readonly STATUS_API = `${environment.apiUrl}/api/orderstatus/summary`;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -33,11 +34,11 @@ export class OrderService {
   const companyId = this.authService.getCurrentUser()?.CompanyId;
   if (!companyId) throw new Error('User company ID is not available.');
   return this.http.get<{ [key: string]: number }>(
-    `http://localhost:5241/api/orderstatus/summary/company/${companyId}`
+    `${environment.apiUrl}/api/orderstatus/summary/company/${companyId}`
   );
 }
 getCustomerDetails(customerId: string) {
-  return this.http.get<any>(`http://localhost:5241/api/customer/${customerId}`);
+  return this.http.get<any>(`${environment.apiUrl}/api/customer/${customerId}`);
 }
 
 

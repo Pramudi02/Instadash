@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap, switchMap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 export interface CampaignPerformance {
   id?: string;
@@ -22,7 +23,7 @@ export interface CampaignPerformance {
   providedIn: 'root'
 })
 export class MarketingCampaignService {
-  private apiUrl = 'http://localhost:5241/api';
+  private apiUrl = '${environment.apiUrl}/api';
 
   constructor(
     private http: HttpClient,

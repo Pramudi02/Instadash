@@ -9,8 +9,8 @@ import { AuthService } from './auth.service'; // Ensure correct path
   providedIn: 'root'
 })
 export class ExpenseService {
-  private apiUrl = 'http://localhost:5241/api/expenses';
-  private backendBaseUrl = 'http://localhost:5241';
+  private apiUrl = '${environment.apiUrl}/api/expenses';
+  private backendBaseUrl = '${environment.apiUrl}';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

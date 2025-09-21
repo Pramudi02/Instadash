@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface UserDetails {
   id?: string;
@@ -22,7 +23,7 @@ export interface UserDetails {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:5241/api/userprofile'; // Update with your backend URL
+  private apiUrl = '${environment.apiUrl}/api/userprofile'; // Update with your backend URL
 
   constructor(private http: HttpClient) {}
 

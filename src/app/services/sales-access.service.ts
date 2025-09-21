@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SalesAccess } from '../models/sales-access.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SalesAccessService {
-  private apiUrl = 'http://localhost:5241/api/SalesAccess';
+  private apiUrl = '${environment.apiUrl}/api/SalesAccess';
 
   constructor(private http: HttpClient) {}
 

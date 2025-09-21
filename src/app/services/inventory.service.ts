@@ -7,12 +7,13 @@ import { product } from '../models/product.model';
 import { AuthService } from './auth.service';
 import { switchMap } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InventoryService {
-  private apiUrl = 'http://localhost:5241/api/Inventory';
+  private apiUrl = '${environment.apiUrl}/api/Inventory';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 

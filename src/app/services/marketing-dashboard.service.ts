@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from '../../environments/environment';
 
 export interface DashboardData {
   campaigns: number;
@@ -37,7 +38,7 @@ export interface Campaign {
 
 @Injectable({ providedIn: 'root' })
 export class MarketingDashboardService {
-  private apiUrl = 'http://localhost:5241/api/marketingdashboard';
+  private apiUrl = '${environment.apiUrl}/api/marketingdashboard';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -74,10 +75,10 @@ export class MarketingDashboardService {
     
     console.log('MarketingDashboardService - getCustomerCount - Using company ID:', finalCompanyId);
     
-    return this.http.get<number>(`http://localhost:5241/api/customercount/count?companyId=${finalCompanyId}`);
+    return this.http.get<number>(`${environment.apiUrl}/api/customercount/count?companyId=${finalCompanyId}`);
   }
 
   getCampaigns(): Observable<Campaign[]> {
-    return this.http.get<Campaign[]>('http://localhost:5241/api/campaign');
+    return this.http.get<Campaign[]>('${environment.apiUrl}/api/campaign');
   }
 }
