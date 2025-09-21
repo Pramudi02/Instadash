@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../../services/auth.service'; // Adjust path if needed
+import { AuthService } from '../../../services/auth.service';
+import { environment } from '../../../../environments/environment';
 
 interface FinanceRecord {
   id: string;
@@ -48,7 +49,7 @@ export class SalesInsightComponent implements OnInit {
       return;
     }
 
-    const url = `http://localhost:5241/api/finance/company/${companyId}`;
+    const url = `${environment.apiUrl}/api/finance/company/${companyId}`;
     console.log('[SalesInsight] Fetching finance data from:', url);
 
     this.http.get<FinanceRecord[]>(url).subscribe({
