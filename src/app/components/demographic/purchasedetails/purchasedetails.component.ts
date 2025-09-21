@@ -4,6 +4,7 @@ import { AgChartOptions,AgBarSeriesOptions  } from "ag-charts-community";
 import { getData } from "./data";
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-purchasedetails',
@@ -31,7 +32,7 @@ export class PurchasedetailsComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
 loadChartData(): void {
-  this.http.get<any[]>('http://localhost:5241/Customer/location-count')
+  this.http.get<any[]>(`${environment.apiUrl}/Customer/location-count`)
     .subscribe((data) => {
       this.options = {
         width: 600,
