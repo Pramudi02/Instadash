@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as signalR from '@microsoft/signalr';
+import { environment } from '../../../environments/environment';
 
 interface ChatMessage {
   id?: string;
@@ -23,7 +24,7 @@ interface MessageEvent {
 })
 export class ChatService {
 
-  private apiUrl = 'http://localhost:5241/api/chat';
+  private apiUrl = `${environment.apiUrl}/api/chat`;
   private hubConnection!: signalR.HubConnection;
 
   // Use a subject so components can subscribe to message events
@@ -50,7 +51,7 @@ export class ChatService {
   
   public startHubConnection(sender: string): void {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5241/chathub', {
+      .withUrl(`${environment.apiUrl}/chathub`, {
         withCredentials: true 
       })
       .withAutomaticReconnect()
